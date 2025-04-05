@@ -1,0 +1,23 @@
+<div class="panel" *ngIf="task !== undefined">
+  <h2 cdkDrag
+      cdkDragRootElement=".cdk-overlay-pane"
+      cdkDragHandle
+      cdkDragBoundary=".task-overlay">タスク詳細</h2>
+  <div class="modal-back">
+    <div class="modal-item">
+      <label for="title">タイトル：</label>
+      <input type=" text" name="title" [(ngModel)]="task.title" placeholder="タイトル">
+      <label for="content">内容：</label>
+      <textarea name="content" [(ngModel)]="task.content" placeholder="内容"></textarea>
+      <label *ngIf="task.id !== null && task.id !== undefined">完了フラグ：</label>
+      <div *ngIf="task.id !== null && task.id !== undefined">
+        <input type="radio" [(ngModel)]="compF" value="0" id="no-comp-flg" name="compF-dialog">
+        <label for="no-comp-flg">未完了</label>
+        <input type="radio" [(ngModel)]="compF" value="1" id="comp-flg" name="compF-dialog">
+        <label for="comp-flg">完了</label>
+      </div>
+    </div>
+    <button (click)="closeModal()">閉じる</button>
+    <button (click)="save()">保存</button>
+  </div>
+</div>

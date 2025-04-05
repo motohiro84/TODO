@@ -1,0 +1,177 @@
+/* tasksComponent's private CSS styles */
+.tasks-back {
+    background-color: #3a3e52;
+    height: 90%;
+}
+
+.sub-title {
+    display: flex;
+    color: white;
+    background-color: #3a3e52;
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding: 15px 30px;
+    display: grid;
+    align-items: center;
+}
+
+.disp-tasks {
+    background-color: #5a6a76;
+    margin: 30px 100px;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: center;
+    height: 75%;
+}
+
+.disp-tasks-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.disp-tasks-frame{
+    width: 100%;
+}
+
+.disp-radio {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.search-text {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.tasks {
+    height: 500px;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.tasks li {
+    position: relative;
+    cursor: pointer;
+    background-color: #eee;
+    margin: 0.5em;
+    padding: 0.3em 0;
+    height: 2.5em;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tasks li:hover {
+    color: #607d8b;
+    background-color: #ddd;
+    left: 0.1em;
+}
+
+.tasks a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 250px;
+}
+
+.tasks a:hover {
+    color: #607d8b;
+}
+
+.tasks .badge {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    color: white;
+    padding: 0.15em 0.7em;
+    background-color: #405061;
+    line-height: 3em;
+    min-width: 16px;
+    text-align: center;
+    margin-right: 0.8em;
+    border-radius: 4px 0 0 4px;
+}
+
+.task{
+    width: 80%;
+    display: flex; /* 横並び */
+    flex-wrap: nowrap; /* 折り返し禁止 */
+    align-items: center; /* 高さを中央揃え */
+    gap: 8px; /* 要素間の余白 */
+}
+
+.task-title{
+    display: inline-block;
+    flex: 0 0 15%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-content{
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    background-color: #eee;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+}
+
+button:hover {
+    background-color: #cfd8dc;
+}
+
+button.delete {
+    position: relative;
+    left: -0.5em;
+    background-color: gray !important;
+    color: white;
+}
+
+button.pin {
+    position: relative;
+    left: -0.5em;
+    margin-right: 0.5em;
+}
+
+button.pin.nothing  {
+    border: #333 solid 1px;
+}
+
+button.pin.check {
+    background-color: rgb(247, 120, 120) !important;
+}
+
+ul .tasks {
+    overflow-y: auto; /* タスクが増えた場合に縦方向にスクロール */
+    padding: 0; /* 必要に応じて余白を調整 */
+    margin: 0; /* 余計なマージンを削除 */
+}
+
+.insert-button{
+    margin-bottom: 15px;
+}
+
+.separator {
+    width: 1px;
+    height: 110%; /* 好きな高さに設定 */
+    background-color: #d8d8d8;
+}

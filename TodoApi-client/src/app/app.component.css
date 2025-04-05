@@ -1,0 +1,51 @@
+.main-title {
+    display: flex;
+    color: white;
+    background-color: #2f3242;
+    justify-content: space-between;
+    border-bottom: #b9b9b9 solid 5px;
+    height: 9.5%;
+}
+
+h1 {
+    font-size: 2em;
+    padding: 15px;
+    display: grid;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin: 15px 0;
+    margin-right: 15px;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: grid;
+    align-items: center;
+    background-color: #2f3242;
+    border-radius: 50px;
+    border: #2196f3 solid 2px;
+}
+
+nav a:visited,
+a:link {
+    color: white;
+}
+
+nav a:hover {
+    color: #039be5;
+    background-color: #3a3e52;
+}
+
+nav a.active {
+    color: #039be5;
+}

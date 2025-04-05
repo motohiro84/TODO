@@ -1,0 +1,14 @@
+<div class="panel">
+  <h2 cdkDrag
+      cdkDragRootElement=".cdk-overlay-pane"
+      cdkDragHandle
+      cdkDragBoundary=".task-overlay">削除確認</h2>
+  <div class="modal-back">
+    <div class="modal-item">
+      <div class="modal-text"><p>本当に削除してもよろしいですか？</p></div>
+			<div class="buttons">
+				<button (click)="closeDialog(true)" class="ok">OK</button>
+				<button (click)="closeDialog(false)" class="cancel">キャンセル</button>
+			</div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="tasks-back">
+  <div class="sub-title">
+    <h2>タスク一覧</h2>
+    <div class="search-text">
+      <app-task-search (searchList)="setTasks($event)">
+      </app-task-search>
+    </div>
+  </div>
+  <div class="disp-tasks">
+    <div class="disp-tasks-frame">
+      <div class="disp-tasks-top">
+        <div></div>
+        <div class="disp-radio">
+          <label>表示タスク：</label>
+          <input type="radio" [(ngModel)]="dispF" (ngModelChange)="displayTask()" value="0" id="all">
+          <label for="all">全て</label>
+          <input type="radio" [(ngModel)]="dispF" (ngModelChange)="displayTask()" value="1" id="no-comp">
+          <label for="no-comp">未完了</label>
+          <input type="radio" [(ngModel)]="dispF" (ngModelChange)="displayTask()" value="2" id="comp">
+          <label for="comp">完了済み</label>
+        </div>
+        <div class="insert-button">
+          <button (click)="openTaskModal(null)">新規タスク追加</button>
+        </div>
+      </div>
+      <ul class="tasks">
+        <li *ngFor="let task of disptasks; let i = index">
+          <!-- <a routerLink="/tasks/{{ task.id }}"> -->
+          <div (click)="openTaskModal(task.id)" class="task">
+            <span class="badge">{{ i + 1 }}</span>
+            <span class="task-title">{{ task.title }}</span>
+            <div class="separator"></div>
+            <span class="task-content">{{ task.content }}</span>
+          </div>
+          <div class="task-btn">
+            <button class="pin" title="タスクのピン留め" (click)="pinnedTask(task)" [ngClass]="getPinBtnClass(task.pinF)">
+              <img [src]="task.pinF == '0' ? 'assets/icon/pin_black.png' : 'assets/icon/pin_white.png'" alt="ピン" class="icon">
+            </button>
+            <button class="delete" title="タスクの削除" (click)="openConfirmationModal(task)">
+              <img src="assets/icon/peke_white.png" alt="削除" class="icon">
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

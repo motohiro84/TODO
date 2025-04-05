@@ -1,0 +1,8 @@
+<div id="search-component">
+  <div>
+    <label>タスク検索：
+      <input type="text" #taskTitle placeholder="タイトル">
+    </label>
+    <button (click)="search(taskTitle.value);">検索</button>
+  </div>
+</div>

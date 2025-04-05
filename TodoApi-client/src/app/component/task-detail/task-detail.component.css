@@ -1,0 +1,27 @@
+h2 {
+    color: white;
+    background-color: #2f3242;
+    padding: 5px;
+    border-bottom: #b9b9b9 solid 3px;
+}
+.panel {
+    height: 246px;
+    background-color: #3a3e52;
+}
+.modal-back {
+    background-color: #5a6a76;
+    height: 150px;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.modal-item {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+}
+
+textarea {
+    resize: none;
+}
