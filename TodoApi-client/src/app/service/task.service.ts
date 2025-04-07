@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { TaskDto, TaskCreateForm, TaskUpdateForm, TaskListDto, TaskPinForm } from '../dto/task-dto';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
@@ -9,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TaskService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = environment.apiBaseUrl;
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

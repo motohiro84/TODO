@@ -9,7 +9,7 @@ RUN npm install
 
 # ソースコードをコピーしてビルド
 COPY ./TodoApi-client /app
-RUN npm run build --prod
+RUN npm run docker
 
 # 2. Nginx用ステージ
 FROM nginx:alpine
