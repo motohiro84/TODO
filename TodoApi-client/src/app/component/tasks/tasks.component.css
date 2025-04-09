@@ -10,6 +10,7 @@
     background-color: #3a3e52;
     display: flex;
     justify-content: space-between;
+    padding-top: 10px;
 }
 
 h2 {
@@ -21,7 +22,7 @@ h2 {
 
 .disp-tasks {
     background-color: #5a6a76;
-    margin: 30px 100px;
+    margin: 15px 100px;
     padding: 30px 100px;
     display: flex;
     justify-content: center;
@@ -42,6 +43,15 @@ h2 {
     font-size: 18px;
     color: white;
     margin-bottom: 25px;
+}
+
+.disp-radio input{
+    margin-left: 10px;
+    cursor:pointer;
+}
+
+.disp-radio label{
+    cursor:pointer;
 }
 
 .search-text {
