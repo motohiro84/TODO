@@ -8,6 +8,8 @@ tags:
     description: 運用監視関連のAPI
   - name: tasks
     description: タスク関連のAPI
+  - name: dashboard
+    description: ダッシュボードのAPI
 paths:
   /health:
     get:
@@ -16,6 +18,20 @@ paths:
       responses:
         '200':
           description: OK
+  /dashboard:
+    get:
+      summary: "ピン留めタスク一覧取得"
+      description: "ピン留めしたタスクを4件取得します"
+      operationId: "dashboardTasks"
+      tags:
+        - dashboard
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskListDto"
   /tasks/:
     get:
       summary: "タスク一覧取得"
