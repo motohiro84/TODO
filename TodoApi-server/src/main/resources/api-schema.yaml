@@ -318,6 +318,16 @@ components:
             $ref: "#/components/schemas/TaskDto"
       required:
         - results
+    DashboardTaskListDto:
+      description: "ピン留めされたタスクのリスト"
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/TaskDto"
+      required:
+        - results
     ResourceNotFoundError:
       description: "指定したリソースが存在しない"
       type: object

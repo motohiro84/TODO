@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.todoapi.mapper.DashboardMapper">
+
+    <!-- ピン留めタスク取得 -->
+    <select id="selectDashboardList" resultType="com.example.todoapi.entity.TaskEntity">
+        SELECT
+            id as id
+        ,   title as title
+        ,   content as content
+        ,   comp_f as compF
+        ,   pin_f as pinF
+        FROM
+            tasks
+        WHERE
+            pin_f = 1
+        ORDER BY id
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+
+</mapper>

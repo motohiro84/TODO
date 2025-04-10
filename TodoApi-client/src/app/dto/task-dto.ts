@@ -32,3 +32,7 @@ export interface TaskPinForm {
   id: number;
   pinF: number;
 }
+
+export interface DashboardTaskListDto {
+  results: TaskDto[];
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskDto } from '../../dto/task-dto';
-import { TaskService } from '../../service/task.service';
+import { TaskDto, DashboardTaskListDto } from '../../dto/task-dto';
+import { DashboardService } from '../../service/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,15 +10,21 @@ import { TaskService } from '../../service/task.service';
 export class DashboardComponent implements OnInit {
   tasks: TaskDto[] = [];
 
-  constructor(private taskService: TaskService) { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
     this.getTasks();
   }
 
   getTasks(): void {
-    this.taskService.getTasks()
-      .subscribe(tasks => this.tasks = tasks.results.slice(0, 4));
+    this.dashboardService.getTasks()
+      .subscribe(response => {
+        this.setTasks(response);
+      });
+  }
+
+  setTasks(response: DashboardTaskListDto): void {
+    this.tasks = [...response.results];
   }
 
 }
