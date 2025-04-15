@@ -28,6 +28,7 @@ public class TaskInsertServiceImpl implements TaskInsertService {
         TaskEntity entity = new TaskEntity();
         entity.setTitle(form.getTitle());
         entity.setContent(form.getContent());
+        entity.setCompDate(form.getCompDate());
 
         // 登録処理
         taskInsertMapper.insert(entity);

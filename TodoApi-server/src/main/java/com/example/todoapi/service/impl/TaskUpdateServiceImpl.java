@@ -34,6 +34,7 @@ public class TaskUpdateServiceImpl implements TaskUpdateService {
         record.setTitle(form.getTitle());
         record.setContent(form.getContent());
         record.setCompF(form.getCompF());
+        record.setCompDate(form.getCompDate());
 
         // 更新処理
         taskUpdateMapper.updateByPrimaryKey(record);

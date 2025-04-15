@@ -9,7 +9,9 @@
         ,   title as title
         ,   content as content
         ,   comp_f as compF
+        ,   comp_date as compDate
         ,   pin_f as pinF
+        ,   image_url as imageUrl
         FROM
             tasks
         WHERE

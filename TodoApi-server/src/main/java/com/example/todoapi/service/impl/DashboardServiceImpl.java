@@ -25,7 +25,7 @@ public class DashboardServiceImpl implements DashboardService {
 
     public List<TaskDto> DashboardList() {
 
-        List<TaskEntity> recordList = dashboardMapper.selectDashboardList(4, 0);
+        List<TaskEntity> recordList = dashboardMapper.selectDashboardList(12, 0);
 
         List<TaskDto> taskList = recordList.stream()
                 .map(record -> commonService.toTaskDto(record))

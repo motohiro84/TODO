@@ -9,12 +9,14 @@
         ,   title as title
         ,   content as content
         ,   comp_f as compF
+        ,   comp_date as compDate
         ,   pin_f as pinF
+        ,   image_url as imageUrl
         FROM
             tasks
         WHERE
             pin_f = 1
-        ORDER BY id
+        ORDER BY comp_date
         LIMIT #{limit}
         OFFSET #{offset}
     </select>

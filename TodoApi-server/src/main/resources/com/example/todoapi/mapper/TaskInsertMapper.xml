@@ -11,11 +11,17 @@
                 <if test="content != null ">
                 ,   content
                 </if>
+                <if test="compDate != null ">
+                ,   comp_date
+                </if>
             )
             VALUES (
                 #{title}
                 <if test="content != null ">
                 ,   #{content, jdbcType=VARCHAR}
+                </if>
+                <if test="compDate != null ">
+                ,   #{compDate, jdbcType=DATE}
                 </if>
             )
     </insert>

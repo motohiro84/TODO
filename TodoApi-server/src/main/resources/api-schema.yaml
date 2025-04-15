@@ -221,12 +221,15 @@ components:
         title:
           type: string
           description: "作成されるタスクのタイトル"
-          maxLength: 256
+          maxLength: 12
           minLength: 1
         content:
           type: string
           description: "タスクの内容"
-          maxLength: 256
+          maxLength: 160
+        compDate:
+          type: date
+          description: "タスクの完了期限"
       required:
         - title
     TaskUpdateForm:
@@ -235,12 +238,15 @@ components:
         title:
           type: string
           description: "作成されるタスクのタイトル"
-          maxLength: 256
+          maxLength: 12
           minLength: 1
         content:
           type: string
           description: "タスクの内容"
-          maxLength: 256
+          maxLength: 160
+        compDate:
+          type: date
+          description: "タスクの完了期限"
         compF:
           type: integer
           format: int32
@@ -264,14 +270,22 @@ components:
         compF:
           type: integer
           description: "タスクの完了フラグ"
+        compDate:
+          type: date
+          description: "タスクの完了期限"
         pinF:
           type: integer
           description: "タスクのピン留めフラグ"
+        imageUrl:
+          type: string
+          description: "タスク成果物"
       required:
         - id
         - title
         - compF
+        - compDate
         - pinF
+        - imageUrl
     TaskPinForm:
       type: object
       properties:

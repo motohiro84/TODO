@@ -47,7 +47,9 @@ public class TaskCommonService {
         taskDto.setTitle(entity.getTitle());
         taskDto.setContent(entity.getContent());
         taskDto.setCompF(entity.getCompF());
+        taskDto.setCompDate(entity.getCompDate());
         taskDto.setPinF(entity.getPinF());
+        taskDto.setImageUrl(entity.getImageUrl());
 
         return taskDto;
    }
