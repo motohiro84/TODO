@@ -18,7 +18,7 @@ export class TasksComponent {
   tasks: TaskDto[];
   disptasks: TaskDto[];
   dispF: string = "0";
-  taskForm: TaskCreateForm = { title: '', content: '' };
+  taskForm: TaskCreateForm = { title: '', content: '', compDate: null };
   dialogRef: MatDialogRef<any>;
 
   constructor(
@@ -99,7 +99,7 @@ export class TasksComponent {
       // 表示するdialogの設定
       disableClose : true,
       id : "panel",
-      height : "250px",
+      height : "280px",
       width : "550px",
       panelClass: "custom-dialog-container",
       data : { taskId: taskId},
@@ -150,7 +150,7 @@ export class TasksComponent {
       // 表示するdialogの設定
       disableClose : true,
       id : "panel",
-      height : "233.5px",
+      height : "233.8px",
       width : "500px",
       panelClass: "custom-dialog-container",
       position : { left: "32%", top: "20%"},

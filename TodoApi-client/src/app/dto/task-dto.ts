@@ -14,17 +14,21 @@ export interface TaskDto {
   title: string;
   content: string;
   compF: number;
+  compDate: Date;
   pinF: number;
+  imageUrl: string;
 }
 
 export interface TaskCreateForm {
   title: string;
   content: string;
+  compDate: Date;
 }
 
 export interface TaskUpdateForm {
   title: string;
   content: string;
+  compDate: Date;
   compF: number;
 }
 

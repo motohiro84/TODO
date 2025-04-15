@@ -10,7 +10,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dial
   styleUrls: ['./task-detail.component.css']
 })
 export class TaskDetailComponent implements OnInit {
-  @Input() task: TaskDto = { id: null, title: '', content: '', compF: 0, pinF: 0};
+  @Input() task: TaskDto = { id: null, title: '', content: '', compF: 0, compDate: null, pinF: 0, imageUrl: ''};
   @Output() updateTasks: EventEmitter<any> = new EventEmitter();
   compF: string;
   isNew: boolean = false;

@@ -99,6 +99,7 @@ export class TaskService {
     this.updateForm = {
       title: task.title,
       content: task.content,
+      compDate: task.compDate,
       compF: task.compF
     };
   }
