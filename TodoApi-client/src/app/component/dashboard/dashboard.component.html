@@ -1,19 +1,22 @@
 <div class="tasks-back">
   <div class="grid grid-pad">
     <div
-    class="col-1-4"
-    *ngFor="let task of tasks">
+      class="col-1-4"
+      *ngFor="let task of tasks">
       <div class="module task">
         <div class="module-title">{{ task.title }}</div>
         <div class="module-content">{{ task.content }}</div>
-        <div *ngIf="task.compDate; else nullTemplate" class="module-deadline">{{ task.compDate | date: 'yyyy-MM-dd' }}</div>
-        <ng-template #nullTemplate><div class="module-deadline">期限なし</div></ng-template>
+        <div
+          *ngIf="task.compDate; else nullTemplate"
+          class="module-deadline"
+          [ngStyle]="{'color': getDeadlineColor(task.compDate)}"
+        >
+          {{ task.compDate | date: 'yyyy-MM-dd' }}
+        </div>
+        <ng-template #nullTemplate>
+          <div class="module-deadline" style="color: black;">期限なし</div>
+        </ng-template>
       </div>
     </div>
-    <!-- <div
-    class="task-deadline-label"
-    [ngClass]="getDeadlineClass(task.deadline)">
-    期限: {{ task.deadline | date:'yyyy-MM-dd' }}
-  </div> -->
   </div>
 </div>

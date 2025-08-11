@@ -32,19 +32,18 @@ h4 {
 .module {
   text-align: center;
   color: #eee;
-  background-color: #3f525c;
   border-radius: 5px;
   height: 100%;
-  border: #3f525c solid 5px;
+  border: #1e8a71 solid 5px;
 }
 
 .module-title {
   height:12.5%;
   font-size: 20px;
-  padding: 5px;
   text-align: center;
   color: #eee;
-  background-color: #3f525c;
+  background-color: #1e8a71;
+  padding-bottom: 5px;
 }
 
 .module-content {
@@ -54,7 +53,7 @@ h4 {
   text-align: left;
   color: #000;
   background-color: #cfd8dc;
-  border-bottom: #3f525c solid 5px;
+  border-bottom: #1e8a71 solid 5px;
 }
 
 .module-deadline {

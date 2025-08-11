@@ -27,4 +27,23 @@ export class DashboardComponent implements OnInit {
     this.tasks = [...response.results];
   }
 
+  getDeadlineColor(compDate: string | Date): string {
+    if (!compDate) return 'black';
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // 今日の0時
+    const deadline = new Date(compDate);
+    deadline.setHours(0, 0, 0, 0); // 期限も0時に揃える
+
+    // 期日が過ぎている
+    if (deadline.getTime() < today.getTime()) return 'red';
+
+    // 3日以内
+    const threeDaysLater = new Date(today);
+    threeDaysLater.setDate(today.getDate() + 3);
+    if (deadline.getTime() <= threeDaysLater.getTime()) return 'orange';
+
+    // それ以外
+    return 'black';
+  }
+
 }
