@@ -17,6 +17,9 @@ export class TasksComponent {
 
   tasks: TaskDto[];
   disptasks: TaskDto[];
+  currentPage: number = 1;
+  pageSize: number = 10; // 1ページあたりの件数
+  totalPages: number = 1; // 総ページ数
   dispF: string = "0";
   taskForm: TaskCreateForm = { title: '', content: '', compDate: null };
   dialogRef: MatDialogRef<any>;
@@ -40,6 +43,7 @@ export class TasksComponent {
   setTasks(response: TaskListDto): void {
     this.tasks = [...response.results];
     this.displayTask();
+    this.updateTotalPages();
   }
 
   add(form: NgForm): void {
@@ -81,6 +85,11 @@ export class TasksComponent {
     } else if (this.dispF == "2") {
       this.disptasks = this.tasksChange(1);
     }
+    this.updateTotalPages();
+  }
+  goToPage(page: number): void {
+    if (page < 1 || page > this.totalPages) return;
+    this.currentPage = page;
   }
 
   tasksChange(compF: number): TaskDto[] {
@@ -170,6 +179,17 @@ export class TasksComponent {
         this.delete(task);
       }
     });
+  }
+
+  get pagedTasks() {
+    const start = (this.currentPage - 1) * this.pageSize;
+    return this.disptasks.slice(start, start + this.pageSize);
+  }
+
+  updateTotalPages() {
+    this.totalPages = Math.ceil(this.disptasks.length / this.pageSize) || 1;
+    if (this.currentPage > this.totalPages) this.currentPage = this.totalPages;
+    if (this.currentPage < 1) this.currentPage = 1;
   }
 
 }

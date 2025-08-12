@@ -1,3 +1,44 @@
+/* --- Paging Stylish --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 2em;
+    font-size: 1.1em;
+}
+.pagination a {
+    display: inline-block;
+    min-width: 2em;
+    padding: 0.3em 0.7em;
+    margin: 0 0.1em;
+    color: #405061;
+    background: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid #b0b8c1;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    font-weight: 500;
+}
+.pagination a:hover:not(.active):not(.disabled) {
+    background: #e3eaf2;
+    color: #1a2a3a;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.pagination a.active {
+    background: #405061;
+    color: #fff;
+    font-weight: bold;
+    border: 1.5px solid #405061;
+    pointer-events: none;
+}
+.pagination a.disabled {
+    color: #b0b8c1;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    pointer-events: none;
+}
 /* tasksComponent's private CSS styles */
 .tasks-back {
     background-color: #3a3e52;
@@ -26,7 +67,7 @@ h2 {
     padding: 30px 100px;
     display: flex;
     justify-content: center;
-    height: 75%;
+    height: 80%;
 }
 
 .disp-tasks-top{
@@ -36,6 +77,9 @@ h2 {
 
 .disp-tasks-frame{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
 }
 
 .disp-radio {
@@ -61,10 +105,11 @@ h2 {
 }
 
 .tasks {
-    height: 500px;
     list-style-type: none;
     padding: 0;
     width: 100%;
+    flex: 1 1 auto;
+    min-height: 25em;
 }
 
 .tasks li {

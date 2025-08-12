@@ -24,24 +24,34 @@
         </div>
       </div>
       <ul class="tasks">
-        <li *ngFor="let task of disptasks; let i = index">
-          <!-- <a routerLink="/tasks/{{ task.id }}"> -->
+        <li *ngFor="let task of pagedTasks; let i = index">
           <div (click)="openTaskModal(task.id)" class="task">
-            <span class="badge">{{ i + 1 }}</span>
+            <span class="badge">{{ (currentPage - 1) * pageSize + i + 1 }}</span>
             <span class="task-title">{{ task.title }}</span>
             <div class="separator"></div>
             <span class="task-content">{{ task.content }}</span>
           </div>
           <div class="task-btn">
-            <button class="pin" title="タスクのピン留め" (click)="pinnedTask(task)" [ngClass]="getPinBtnClass(task.pinF)">
-              <img [src]="task.pinF == '0' ? 'assets/icon/pin_black.png' : 'assets/icon/pin_white.png'" alt="ピン" class="icon">
+            <button class="pin" title="タスクのピン留め" (click)="pinnedTask(task); $event.stopPropagation();"
+              [ngClass]="getPinBtnClass(task.pinF)">
+              <img [src]="task.pinF == '0' ? 'assets/icon/pin_black.png' : 'assets/icon/pin_white.png'" alt="ピン"
+                class="icon">
             </button>
-            <button class="delete" title="タスクの削除" (click)="openConfirmationModal(task)">
+            <button class="delete" title="タスクの削除" (click)="openConfirmationModal(task); $event.stopPropagation();">
               <img src="assets/icon/peke_white.png" alt="削除" class="icon">
             </button>
           </div>
         </li>
       </ul>
+      <div class="pagination" style="text-align:center; margin: 2em 0 0 0;">
+        <a href="#" (click)="goToPage(1); $event.preventDefault()" [class.disabled]="currentPage === 1">«</a>
+        <a href="#" (click)="goToPage(currentPage - 1); $event.preventDefault()" [class.disabled]="currentPage === 1">‹</a>
+        <ng-container *ngFor="let page of [].constructor(totalPages); let idx = index">
+          <a href="#" (click)="goToPage(idx+1); $event.preventDefault()" [class.active]="currentPage === (idx+1)">{{idx+1}}</a>
+        </ng-container>
+        <a href="#" (click)="goToPage(currentPage + 1); $event.preventDefault()" [class.disabled]="currentPage === totalPages">›</a>
+        <a href="#" (click)="goToPage(totalPages); $event.preventDefault()" [class.disabled]="currentPage === totalPages">»</a>
+      </div>
     </div>
   </div>
 </div>
